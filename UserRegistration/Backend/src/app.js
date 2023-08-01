@@ -18,10 +18,6 @@ app.use(express.urlencoded({extended:false}));
 app.set('view engine','hbs');//setting default file as hbs
 app.set('views',templates_path);
 hbs.registerPartials(partials_path);
-app.get('/style.css', (req, res) => {
-  res.setHeader('Content-Type', 'text/css');
-  res.sendFile(path.join(__dirname, 'style.css'));
-});
 app.get('/',(req,res)=>{//call back function
     // res.send('Hello World');.
     res.render('index');
